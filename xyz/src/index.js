@@ -1,14 +1,14 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Import the `react-dom/client` for React 18
-import App from './App'; // Import your main App component
-import './index.css'; // Import any global CSS
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import { AuthProvider } from './context/AuthContext';
 
-// Create a root element using React 18's createRoot API
-const container = document.getElementById('root');
-const root = ReactDOM.createRoot(container);
-
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </React.StrictMode>
 );

@@ -10,9 +10,21 @@ const communicationLogRoutes = require('./routes/communicationLogRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
-app.use(express.json());
+app.get('/hello',(req,res)=>{
+      res.status(200).json({message: 'Hello api'});
+})
+// CORS configuration options
+const corsOptions = {
+  origin: 'http://localhost:3000/home', // Specify the allowed origin
+  methods: ['GET', 'POST'], // Specify allowed HTTP methods
+  allowedHeaders: ['Content-Type'], // Specify allowed headers
+  credentials: true, // Allow credentials (cookies, authentication)
+};
+
+// Apply CORS middleware
+app.use(cors(corsOptions));
+// app.use(cors());
+// app.use(express.json());
 
 // Custom headers for security
 app.use((req, res, next) => {

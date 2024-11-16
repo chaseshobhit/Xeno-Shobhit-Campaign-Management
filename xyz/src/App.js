@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import GoogleAuth from './components/GoogleAuth';
+import { AuthProvider } from './context/AuthContext'; // Import AuthProvider
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AudienceCreation from './pages/AudienceCreation';
 import CampaignPage from './pages/CampaignPage';
 
 function App() {
-  const [user, setUser] = useState(null);
-
   return (
-    <Router>
-      <div>
-        {!user ? (
-          <GoogleAuth setUser={setUser} />
-        ) : (
-          <div>
-            <h1>Welcome, {user.name}</h1>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/audience" element={<AudienceCreation />} />
-              <Route path="/campaigns" element={<CampaignPage />} />
-            </Routes>
-          </div>
-        )}
-      </div>
-    </Router>
+    <AuthProvider>  {/* Wrap the app with AuthProvider */}
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/audience" element={<AudienceCreation />} />
+          <Route path="/campaigns" element={<CampaignPage />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

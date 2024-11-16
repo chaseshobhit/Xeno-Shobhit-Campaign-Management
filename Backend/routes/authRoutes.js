@@ -9,6 +9,7 @@ const { googleAuth } = require('../services/googleAuthService');
 
 router.post('/login', async (req, res) => {
   try {
+    console.log("Auth routes reached");
     const { token } = req.body;
     const { user } = await googleAuth(token); // Call your Google OAuth service function here
     res.status(200).json({ user });

@@ -1,0 +1,44 @@
+/* Navbar styling
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(45deg, #1e3c72, #2a5298); 
+    padding: 10px 30px;
+    color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 8px;
+  }
+  
+  .navbar-logo h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #f8f9fa;
+  }
+  
+  .navbar-links {
+    display: flex;
+    gap: 30px;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #f8f9fa;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  .navbar-link:hover {
+    color: #f4b400;
+  }
+  
+  .navbar-link:active {
+    color: #f4b400;
+    transform: translateY(2px);
+  }
+   */
