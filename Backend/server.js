@@ -8,15 +8,13 @@ const campaignRoutes = require('./routes/campaignRoutes');
 const communicationLogRoutes = require('./routes/communicationLogRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
-app.get('/hello',(req,res)=>{
-      res.status(200).json({message: 'Hello api'});
-})
+
 // CORS configuration options
 const corsOptions = {
-  origin: 'http://localhost:3000/home', // Specify the allowed origin
-  methods: ['GET', 'POST'], // Specify allowed HTTP methods
+  origin: 'http://localhost:3000', // Specify the allowed origin
+  methods: ['GET','POST','HEAD','PUT','PATCH','DELETE'], // Specify allowed HTTP methods
   allowedHeaders: ['Content-Type'], // Specify allowed headers
   credentials: true, // Allow credentials (cookies, authentication)
 };
@@ -38,7 +36,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/audience', audienceRoutes);
 app.use('/api/campaigns', campaignRoutes);
 app.use('/api/communications', communicationLogRoutes);
-
+app.get('/hello',(req,res)=>{
+  res.status(200).json({message: 'Hello api'});
+})
 // Database Connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,

@@ -1,0 +1,110 @@
+/* General Reset and Base Styling */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.navbar-logo h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #f3f3f3;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar-link {
+  color: #f3f3f3;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #00bcd4;
+}
+
+/* Auth Info Section */
+.auth-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-info p {
+  margin: 0;
+  color: #f3f3f3;
+}
+
+.auth-info button {
+  background-color: #00bcd4;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-info button:hover {
+  background-color: #0097a7;
+}
+
+.auth-info img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* Page Container */
+.page-container {
+  padding: 2rem;
+}
+
+/* Utility Styles */
+button {
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .auth-info {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
